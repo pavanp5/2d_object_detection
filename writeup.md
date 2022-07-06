@@ -11,7 +11,7 @@ The notebooks have been provided on the git repo [2d Object detection](https://g
 The metadata such as timeofday, location and weather was extracted from the waymo data ,while converting to tfrecord format suitable for TFOD object detection model.
 This metadata has been used to perform the train & eval split. The CSV files with metadata have been provided here [train_eval_split](https://github.com/pavanp5/2d_object_detection/tree/main/data)
 
-The train set included data that was very representative. This can be evidenced in the [EDA notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Exploratory%20Data%20Analysis.ipynb).
+The train set included data that was very representative. This can be evidenced in the [EDA notebook](https://github.com/pavanp5/2d_object_detection/blob/main/EDA_Train_Eval_Split.ipynb).
 
 9 experiments were performed in total. 4 of the experiments yeilded improvement in precision and accuracy. The metrics have been capture at the class level and are available here [training metrics notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Training_Experiment_Results.ipynb).
 
@@ -21,7 +21,7 @@ Increasing the scales per octave to 3 improved the precision and recall. But fur
 
 nms threshold of 1e-02 and 1e-01 were tried but they reduced the precision and recall and so 1e-08 was used with iou of 0.6.
 
-Kmeans Clustering was used on the ground truth bounding boxes to derive suitable anchor box aspect ratios. The code and plots for the same can be observed at teh end of this notebook[anchor box calculation at the end of this notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Augmentations.ipynb).
+Kmeans Clustering was used on the ground truth bounding boxes to derive suitable anchor box aspect ratios. The code and plots for the same can be observed at teh end of this notebook [anchor box calculation at the end of this notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Augmentations.ipynb).
 
 Cosine decay scheduler has been used. The classification, localization loss and learning rate decay plots can ve viewed on the tensorboard in this notebook [Tensorboard dev plots](https://github.com/pavanp5/2d_object_detection/blob/main/Tensorboard_log_plots.ipynb).
 

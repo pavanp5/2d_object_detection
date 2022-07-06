@@ -26,3 +26,7 @@ Kmeans Clustering was used on the ground truth bounding boxes to derive suitable
 Cosine decay scheduler has been used. The classification, localization loss and learning rate decay plots can ve viewed on the tensorboard in this notebook [Tensorboard dev plots](https://github.com/pavanp5/2d_object_detection/blob/main/Tensorboard_log_plots.ipynb).
 
 The class level metrics has been provided in this notebook for the experiments that showed improved precision and recall here [metrics notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Training_Experiment_Results.ipynb).
+
+Sigmoid Focal loss was used for classification loss to have the hard examples learnt given the imbalance between classes. Gamma value was increased greater than 2 but was suitable. Gamma equal zero is equivalent to binary cross entropy and was not suitable.
+
+Based on the study or referring of few related research papers the following will be taken up as next steps, i.e. building the model from scratch thereby having control to extract features from layers and fuse them. Currently SSD is not very good with small objects. This is because the lower layers which are used for small objects detection do not have enough information to detect object. If information from other layers higher up can be fused with this the prediction small objects can be improved. 

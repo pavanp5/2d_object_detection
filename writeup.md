@@ -6,7 +6,7 @@ Waymo Data set was used for the 2D Object detection.
 Tensorflow Object detection (TFOD) was used to train and evaluate.
 ssd_resnet50_v1_fpn_640x640_coco17 pretrained model weights were used to train.
 
-To run the code and bring up the TFOD environment you can run the cell on [this installation notebook.](https://github.com/pavanp5/2d_object_detection/blob/main/Installation.ipynb)
+To run the code and bring up the TFOD environment you can run the cells on [this installation notebook.](https://github.com/pavanp5/2d_object_detection/blob/main/Installation.ipynb)
 
 The EDA, training and evaluation was done on google colab pro.
 The notebooks have been provided on the git repo [2d Object detection](https://github.com/pavanp5/2d_object_detection).

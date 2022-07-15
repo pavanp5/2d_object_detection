@@ -14,7 +14,7 @@ This metadata has been used to perform the train & eval split. The CSV files wit
 
 The train set included data that was very representative. This can be evidenced in the [EDA notebook](https://github.com/pavanp5/2d_object_detection/blob/main/EDA_Train_Eval_Split.ipynb).
 
-4 experiments were performed in total. 3 of the experiments yielded improvement in precision and accuracy. The evaluation metrics and model visualization of detections are available here [Eval metrics notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Evaluation_&_Model_Result_Visualization.ipynb).
+4 experiments were performed in total. 3 of the experiments yielded improvement in precision and accuracy. The default model overfits,. The overfitting was reduced using augmentation and other improvements in experiment 4. The overfitting can however be reduced further if more training sequences are available. 202 training sequences were used for the experiments here each having around 200 images. The evaluation metrics and model visualization of detections are available here [Eval metrics notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Evaluation_&_Model_Result_Visualization.ipynb).
 
 |Model#  | Eval mAP@50 |Eval AR@100  | Eval total loss |Technique|
 |--|--|--|--|--|

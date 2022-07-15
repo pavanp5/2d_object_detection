@@ -20,7 +20,7 @@ The train set included data that was very representative. This can be evidenced 
 |--|--|--|--|--|
 |  Exp1|28.82%  | 21.98% | 0.7441 |No Augmentation|
 |Exp2| 28.9% | 21.3%  |  0.7386|Augmentation random crop, random contrast adjust
-|Exp4|29.03|21.33%|0.7091|Sklearn Kmeans on gt boxes to get anchor aspect ratios, Octaves per scale increased to 3, Augmentation-random crop,random contrast adjust
+|Exp4|29.03|21.33%|0.7091|Sklearn Kmeans on gt boxes to get anchor aspect ratios, Scales per octave increased to 3, Augmentation-random crop,random contrast adjust
 
 **Model visualization:**
 Exp4 detection images and videos:

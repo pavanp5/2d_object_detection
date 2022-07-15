@@ -18,9 +18,9 @@ The train set included data that was very representative. This can be evidenced 
 
 |Model#  | Eval mAP@50 |Eval AR@100  | Eval total loss |Technique|
 |--|--|--|--|--|
-|  Exp1|28.82%  | 21.98% | 0.7441 |No Aug|
-|Exp2| 28.9% | 21.3%  |  0.7386|Aug-random crop, random contrast adjust
-|Exp4|29.03|21.33%|0.7091|Sklearn kmeans on gt boxes to get anchor aspect ratios, Augmentation-random crop,random contrast adjust
+|  Exp1|28.82%  | 21.98% | 0.7441 |No Augmentation|
+|Exp2| 28.9% | 21.3%  |  0.7386|Augmentation random crop, random contrast adjust
+|Exp4|29.03|21.33%|0.7091|Sklearn Kmeans on gt boxes to get anchor aspect ratios, Augmentation-random crop,random contrast adjust
 
 **Model visualization:**
 Exp4 detection images and videos:
@@ -50,13 +50,27 @@ Kmeans Clustering was used on the ground truth bounding boxes to derive suitable
 **Other details:**
 Cosine decay scheduler has been used. The classification, localization loss and learning rate decay plots can be viewed on tensor board plots.
 
+**Training Experiment4** 
 ![Exp4 Tensor board](./images/exp4_tfboard_train.PNG)
-![Exp3 Tensor board](./images/exp3_tfboard_train.PNG)
-![Exp1 Tensor board](./images/exp3_tfboard_train.PNG)
 
-![Exp4 Tensor board](./images/Exp4_eval_metric.PNG)
-![Exp3 Tensor board](./images/Exp3_eval_metric.PNG)
-![Exp1 Tensor board](./images/Exp1_eval_metric.PNG)
+**Training Experiment3**
+![Exp3 Tensor board](./images/exp3_tfboard_train.PNG)
+
+**Training Experiment1**
+![Exp1 Tensor board](./images/exp1_tfboard_train.PNG)
+
+**Evaluation metric Experiment4**
+![Eval metric Experiment4 ](./images/Exp4_eval_metric.PNG)
+
+**Evaluation metric Experiment3**
+![Eval metric Experiment3](./images/Exp3_eval_metric.PNG)
+
+**Evaluation metric Experiment1**
+![Eval metric Experiment1](./images/Exp1_eval_metric.PNG)
+
+**Category wise metric for experiment 4 (Cars, Pedestrian and Cyclist):**
+![category metric precision exp4](./images/category_metric_precision.PNG)
+![category metric recall exp4](./images/category_metric_precision.PNG)
 
 Sigmoid Focal loss was used for classification loss to have the hard examples learnt given the imbalance between classes. Gamma value was increased greater than 2 but was suitable. Gamma equal zero is equivalent to categorical cross entropy and was not suitable.
 

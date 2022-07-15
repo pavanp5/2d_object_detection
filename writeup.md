@@ -30,22 +30,11 @@ Exp4 detection images and videos:
 ![SFO rainy day Detections](./images/sfo_rain_day.png)
 
 **Videos of detections:**
-
-<video width="320" height="320" controls>
-  <source src="./videos/animation_eval_phx_rain.mp4" type="video/mp4">
-</video>
-<video width="320" height="320" controls>
-  <source src="./videos/animation_eval_otherloc_day.mp4" type="video/mp4">
-</video>
-<video width="320" height="320" controls>
-  <source src="./videos/animation_eval_sfo_dawndusk.mp4" type="video/mp4">
-</video>
-<video width="320" height="320" controls>
-  <source src="./videos/animation_eval_sfo_day.mp4" type="video/mp4">
-</video>
-<video width="320" height="320" controls>
-  <source src="./videos/animation_eval_sfo_night.mp4" type="video/mp4">
-</video>
+[Day time detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_otherloc_day.mp4)
+[Phoenix rain video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_phx_rain.mp4)
+[SFO Dawn/Dusk detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_dawndusk.mp4)
+[SFO Day time detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_day.mp4)
+[SFO Night time detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_night.mp4)
 
 **What Augmentations were used and why?**
 The exp1 model with no augmentation overfits. The number of images are considerably high but they are from same sequences. 202 sequences were used for training each having 200 images approximately.  So, random crop was used so that the images of the sequence are cropped and at different regions thus reducing overfit. The second augmentation used was random adjust contrast. The data has night sequences and dawn/dusk sequences, so adjusting contrast would help train for the dawn/ dusk scenarios too. The augmentations can be viewed here [Augmentations notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Augmentations.ipynb).

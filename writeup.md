@@ -22,6 +22,13 @@ The train set included data that was very representative. This can be evidenced 
 |Exp3| 28.9% | 21.3%  |  0.7386|Augmentation random crop, random contrast adjust
 |Exp4|29.03|21.33%|0.7091|Sklearn Kmeans on gt boxes to get anchor aspect ratios, Scales per octave increased to 3, Augmentation-random crop,random contrast adjust
 
+**Experiment 4 Category wise metric:**
+|Category|  AP@50|AR@100|
+|--|--|--|
+| Cars | 42.4% |30.9%|
+| Pedestrian | 27.2% |17.6%|
+| Cyclist | 17.5% |15.5%|
+
 **Model visualization:**
 Exp4 detection images and videos:
 ![SFO day time Detections](./images/sfo_day.png)

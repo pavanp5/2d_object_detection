@@ -1,4 +1,5 @@
 
+
 # 2D Object detection
 
 Waymo Data set was used for the 2D Object detection.
@@ -13,19 +14,50 @@ This metadata has been used to perform the train & eval split. The CSV files wit
 
 The train set included data that was very representative. This can be evidenced in the [EDA notebook](https://github.com/pavanp5/2d_object_detection/blob/main/EDA_Train_Eval_Split.ipynb).
 
-9 experiments were performed in total. 4 of the experiments yeilded improvement in precision and accuracy. The metrics have been capture at the class level and are available here [training metrics notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Training_Experiment_Results.ipynb).
+4 experiments were performed in total. 3 of the experiments yielded improvement in precision and accuracy. The evaluation metrics and model visualization of detections are available here [Eval metrics notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Evaliation_&_Model_Result_Visualization.ipynb).
 
-Many augmentations were tried of which contrast adjust augmentation yielded an improved precision and recall. The augmentations can be viewed here [Augmentations notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Augmentations.ipynb).
+|Model#  | Eval mAP@50 |Eval AR@100  | Eval total loss |Technique|
+|--|--|--|--|--|
+|  Exp1|28.82%  | 21.98% | 0.7441 |No Aug|
+|Exp2| 28.9% | 21.3%  |  0.7386|Aug-random crop, random contrast adjust
+|Exp4|29.03|21.33%|0.7091|Sklearn kmeans on gt boxes to get anchor aspect ratios, Augmentation-random crop,random contrast adjust
 
-Increasing the scales per octave to 3 improved the precision and recall. But further increase to scales per octave reduced the precision and recall.
+**Model visualization:**
+Exp4 detection images and videos:
+![SFO day time Detections](./images/sfo_day.PNG)
+![Phoenix rainy night Detections](./images/phx_rain.PNG)
+![SFO night Detections](./images/sfo_night.PNG)
+![SFO rainy day Detections](./images/sfo_rain_day.PNG)
 
-nms threshold of 1e-02 and 1e-01 were tried but they reduced the precision and recall and so 1e-08 was used with iou of 0.6.
+**Videos of detections:**
+![Day](./videos/animation_eval_otherloc_day.mp4)
+![Phoenix rainy night ](./videos/animation_eval_phx_rain.mp4)
+![SFO Dawn/Dusk](./videos/animation_eval_sfo_dawndusk.mp4)
+![SFO Day](./videos/animation_eval_sfo_day.mp4)
+![SFO Night](./videos/animation_eval_sfo_night.mp4)
 
-Kmeans Clustering was used on the ground truth bounding boxes to derive suitable anchor box aspect ratios. The code and plots for the same can be observed at teh end of this notebook [anchor box calculation at the end of this notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Augmentations.ipynb).
 
-Cosine decay scheduler has been used. The classification, localization loss and learning rate decay plots can ve viewed on the tensorboard in this notebook [Tensorboard dev plots](https://github.com/pavanp5/2d_object_detection/blob/main/Tensorboard_log_plots.ipynb).
+**What Augmentations were used and why?**
+The exp1 model with no augmentation overfits. The number of images are considerably high but they are from same sequences. 202 sequences were used for training each having 200 images approximately.  So, random crop was used so that the images of the sequence are cropped and at different regions thus reducing overfit. The second augmentation used was random adjust contrast. The data has night sequences and dawn/dusk sequences, so adjusting contrast would help train for the dawn/ dusk scenarios too. The augmentations can be viewed here [Augmentations notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Augmentations.ipynb).
 
-The class level metrics has been provided in this notebook for the experiments that showed improved precision and recall here [metrics notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Training_Experiment_Results.ipynb).
+**What changes were made to improve model over after augmentation was applied?**
+Exp4 config metric improved, the eval loss reduced compared to previous experiments. 
+2 Changes below were made
+ 1. Anchor box aspect ratios were calculated from train dataset ground truth boxes. 
+ 2. Scales per octave was increased to 3
+
+Kmeans Clustering was used on the ground truth bounding boxes to derive suitable anchor box aspect ratios. The code and plots for the same can be observed at the end of this notebook [anchor box calculation at the end of this notebook](https://github.com/pavanp5/2d_object_detection/blob/main/Augmentations.ipynb).
+
+**Other details:**
+Cosine decay scheduler has been used. The classification, localization loss and learning rate decay plots can be viewed on tensor board plots.
+
+![Exp4 Tensor board](./images/exp4_tfboard_train.PNG)
+![Exp3 Tensor board](./images/exp3_tfboard_train.PNG)
+![Exp1 Tensor board](./images/exp3_tfboard_train.PNG)
+
+![Exp4 Tensor board](./images/Exp4_eval_metric.PNG)
+![Exp3 Tensor board](./images/Exp3_eval_metric.PNG)
+![Exp1 Tensor board](./images/Exp1_eval_metric.PNG)
 
 Sigmoid Focal loss was used for classification loss to have the hard examples learnt given the imbalance between classes. Gamma value was increased greater than 2 but was suitable. Gamma equal zero is equivalent to categorical cross entropy and was not suitable.
 

@@ -30,10 +30,10 @@ Exp4 detection images and videos:
 ![SFO rainy day Detections](./images/sfo_rain_day.png)
 
 **Videos of detections:**
-[Day time detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_otherloc_day.mp4)
-[Phoenix rain video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_phx_rain.mp4)
-[SFO Dawn/Dusk detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_dawndusk.mp4)
-[SFO Day time detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_day.mp4)
+[Day time detection video, ](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_otherloc_day.mp4)
+[Phoenix rain video, ](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_phx_rain.mp4)
+[SFO Dawn/Dusk detection video, ](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_dawndusk.mp4)
+[SFO Day time detection video, ](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_day.mp4)
 [SFO Night time detection video](https://github.com/pavanp5/2d_object_detection/blob/main/videos/animation_eval_sfo_night.mp4)
 
 **What Augmentations were used and why?**

@@ -24,10 +24,10 @@ The train set included data that was very representative. This can be evidenced 
 
 **Model visualization:**
 Exp4 detection images and videos:
-![SFO day time Detections](./images/sfo_day.PNG)
-![Phoenix rainy night Detections](./images/phx_rain.PNG)
-![SFO night Detections](./images/sfo_night.PNG)
-![SFO rainy day Detections](./images/sfo_rain_day.PNG)
+![SFO day time Detections](./images/sfo_day.png)
+![Phoenix rainy night Detections](./images/phx_rain.png)
+![SFO night Detections](./images/sfo_night.png)
+![SFO rainy day Detections](./images/sfo_rain_day.png)
 
 **Videos of detections:**
 ![Day](./videos/animation_eval_otherloc_day.mp4)

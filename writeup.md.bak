@@ -20,7 +20,7 @@ The train set included data that was very representative. This can be evidenced 
 |--|--|--|--|--|
 |  Exp1|28.82%  | 21.98% | 0.7441 |No Augmentation|
 |Exp2| 28.9% | 21.3%  |  0.7386|Augmentation random crop, random contrast adjust
-|Exp4|29.03|21.33%|0.7091|Sklearn Kmeans on gt boxes to get anchor aspect ratios, Octaves per scale increased to 3, Augmentation-random crop,random contrast adjust
+|Exp4|29.03|21.33%|0.7091|Sklearn Kmeans on gt boxes to get anchor aspect ratios, Augmentation-random crop,random contrast adjust
 
 **Model visualization:**
 Exp4 detection images and videos:
@@ -69,10 +69,8 @@ Cosine decay scheduler has been used. The classification, localization loss and 
 ![Eval metric Experiment1](./images/Exp1_eval_metric.PNG)
 
 **Category wise metric for experiment 4 (Cars, Pedestrian and Cyclist):**
-**Precision Category level Exp4**
 ![category metric precision exp4](./images/category_metric_precision.PNG)
-**Recall category level Exp 4**
-![category metric recall exp4](./images/category_metric_recall.PNG)
+![category metric recall exp4](./images/category_metric_precision.PNG)
 
 Sigmoid Focal loss was used for classification loss to have the hard examples learnt given the imbalance between classes. Gamma value was increased greater than 2 but was suitable. Gamma equal zero is equivalent to categorical cross entropy and was not suitable.
 
